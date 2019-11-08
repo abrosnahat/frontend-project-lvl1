@@ -2,4 +2,7 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
 [![Build Status](https://travis-ci.org/abrosnahat/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/abrosnahat/frontend-project-lvl1)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17b8700ab1734edf31d8d4fe03e401df17af33a2
