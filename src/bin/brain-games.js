@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { salute } from '../index.js';
+import salute from '../index';
 
 console.log('Welcome to the B Games!');
 
