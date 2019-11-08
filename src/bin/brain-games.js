@@ -2,6 +2,6 @@
 
 import salute from '../index';
 
-console.log('Welcome to the Bg Games!');
+console.log('Welcome to the Brain Games!');
 
 salute();
