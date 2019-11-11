@@ -1,7 +1,13 @@
 {
   "name": "frontend-project-lvl1-abros",
   "version": "1.0.0",
-  "description": "",
+  "description": "Brain mathematical games",
+  "keywords": [
+    "brain",
+    "mathematical",
+    "math",
+    "logic"
+  ],
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
