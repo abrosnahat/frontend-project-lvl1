@@ -7,17 +7,16 @@ const salute = () => {
   const quest = (count = 0) => {
     if (count === 3) return console.log(`Congratulations, ${name}!`);
 
-    const rand1 = Math.floor(Math.random() * 26);
-    const rand2 = Math.floor(Math.random() * 26);
-    const oper = '+-*';
-    const operRand = oper[Math.floor(Math.random() * 3)];
+    const rand1 = Math.floor(Math.random() * 101);
+    const rand2 = Math.floor(Math.random() * 101);
 
-    console.log(`Question: ${rand1} ${operRand} ${rand2}`);
+    console.log(`Question: ${rand1} ${rand2}`);
+    const gcd = (a, b) => {
+      if (b === 0) return a;
+      return gcd(b, a % b);
+    };
 
-    let res = 0;
-    if (operRand === '+') res = rand1 + rand2;
-    if (operRand === '-') res = rand1 - rand2;
-    if (operRand === '*') res = rand1 * rand2;
+    const res = gcd(rand1, rand2);
 
     const answer = readlineSync.question('Your answer: ');
 
