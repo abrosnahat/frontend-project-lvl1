@@ -1,45 +1,23 @@
-import readlineSync from 'readline-sync';
+import game from '../engine';
 
-const salute = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}\n`);
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const quest = (count = 0) => {
-    if (count === 3) return console.log(`Congratulations, ${name}!`);
+const res = () => {
+  const rand1 = Math.ceil(Math.random() * 101);
 
-    const rand1 = Math.ceil(Math.random() * 101);
-
-    const isPrime = (num) => {
-      let x = 0;
-      for (let i = 0; i <= num; i += 1) {
-        if (num % i === 0) x += 1;
-      }
-      if (x === 2) return true;
-      return false;
-    };
-    isPrime(rand1);
-
-    console.log(`Question: ${rand1}`);
-
-    const answer = readlineSync.question('Your answer: ');
-
-    if (isPrime(rand1) === true && answer === 'yes') {
-      console.log('Correct!');
-      quest(count + 1);
+  const isPrime = (num) => {
+    let x = 0;
+    for (let i = 0; i <= num; i += 1) {
+      if (num % i === 0) x += 1;
     }
-    if (isPrime(rand1) === false && answer === 'no') {
-      console.log('Correct!');
-      quest(count + 1);
-    }
-    if (isPrime(rand1) === true && answer === 'no') {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${name}!`);
-    }
-    if (isPrime(rand1) === false && answer === 'yes') {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${name}!`);
-    }
-    return undefined;
+    if (x === 2) return 'yes';
+    return 'no';
   };
-  quest();
+  const correctAnswer = isPrime(rand1);
+
+  const question = rand1;
+
+  return { question, correctAnswer };
 };
 
-export default salute;
+export default () => game(description, res);

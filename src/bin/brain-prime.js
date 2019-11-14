@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import salute from '../games/prime';
+import prime from '../games/prime';
 
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
-
-salute();
+prime();

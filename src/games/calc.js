@@ -1,35 +1,20 @@
-import readlineSync from 'readline-sync';
+import game from '../engine';
 
-const salute = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}\n`);
+const description = 'What is the result of the expression?';
 
-  const quest = (count = 0) => {
-    if (count === 3) return console.log(`Congratulations, ${name}!`);
+const res = () => {
+  const rand1 = Math.floor(Math.random() * 26);
+  const rand2 = Math.floor(Math.random() * 26);
+  const oper = '+-*';
+  const operRand = oper[Math.floor(Math.random() * 3)];
 
-    const rand1 = Math.floor(Math.random() * 26);
-    const rand2 = Math.floor(Math.random() * 26);
-    const oper = '+-*';
-    const operRand = oper[Math.floor(Math.random() * 3)];
+  const question = `${rand1} ${operRand} ${rand2}`;
 
-    console.log(`Question: ${rand1} ${operRand} ${rand2}`);
-
-    let res = 0;
-    if (operRand === '+') res = rand1 + rand2;
-    if (operRand === '-') res = rand1 - rand2;
-    if (operRand === '*') res = rand1 * rand2;
-
-    const answer = readlineSync.question('Your answer: ');
-
-    if (res === Number(answer)) {
-      console.log('Correct!');
-      quest(count + 1);
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}. Let's try again, ${name}!`);
-    }
-    return undefined;
-  };
-  quest();
+  let correctAnswer = 0;
+  if (operRand === '+') correctAnswer = String(rand1 + rand2);
+  if (operRand === '-') correctAnswer = String(rand1 - rand2);
+  if (operRand === '*') correctAnswer = String(rand1 * rand2);
+  return { question, correctAnswer };
 };
 
-export default salute;
+export default () => game(description, res);

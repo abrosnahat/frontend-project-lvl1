@@ -1,34 +1,21 @@
-import readlineSync from 'readline-sync';
+import game from '../engine';
 
-const salute = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}\n`);
+const description = 'Find the greatest common divisor of given numbers.';
 
-  const quest = (count = 0) => {
-    if (count === 3) return console.log(`Congratulations, ${name}!`);
+const res = () => {
+  const rand1 = Math.floor(Math.random() * 101);
+  const rand2 = Math.floor(Math.random() * 101);
 
-    const rand1 = Math.floor(Math.random() * 101);
-    const rand2 = Math.floor(Math.random() * 101);
+  const question = `${rand1} ${rand2}`;
 
-    console.log(`Question: ${rand1} ${rand2}`);
-    const gcd = (a, b) => {
-      if (b === 0) return a;
-      return gcd(b, a % b);
-    };
-
-    const res = gcd(rand1, rand2);
-
-    const answer = readlineSync.question('Your answer: ');
-
-    if (res === Number(answer)) {
-      console.log('Correct!');
-      quest(count + 1);
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}. Let's try again, ${name}!`);
-    }
-    return undefined;
+  const gcd = (a, b) => {
+    if (b === 0) return a;
+    return gcd(b, a % b);
   };
-  quest();
+
+  const correctAnswer = String(gcd(rand1, rand2));
+
+  return { question, correctAnswer };
 };
 
-export default salute;
+export default () => game(description, res);
