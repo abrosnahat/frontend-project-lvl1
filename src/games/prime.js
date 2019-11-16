@@ -1,9 +1,10 @@
 import game from '../engine';
+import random from '../random';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const res = () => {
-  const rand1 = Math.ceil(Math.random() * 101);
+  const rand1 = random(100);
 
   const isPrime = (num) => {
     let x = 0;

@@ -1,10 +1,11 @@
 import game from '../engine';
+import random from '../random';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
 const res = () => {
-  const rand1 = Math.floor(Math.random() * 101);
-  const rand2 = Math.floor(Math.random() * 101);
+  const rand1 = random(100);
+  const rand2 = random(100);
 
   const question = `${rand1} ${rand2}`;
 
