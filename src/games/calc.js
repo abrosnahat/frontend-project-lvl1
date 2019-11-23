@@ -4,20 +4,20 @@ import random from '../random';
 const description = 'What is the result of the expression?';
 const operators = '+-*';
 
-const res = () => {
-  const rand1 = random(25);
-  const rand2 = random(25);
-  const operatorRand = operators[random(operators.length)];
+const getData = () => {
+  const random1 = random(0, 25);
+  const random2 = random(0, 25);
+  const operatorRandom = operators[random(0, operators.length)];
 
-  const question = `${rand1} ${operatorRand} ${rand2}`;
+  const question = `${random1} ${operatorRandom} ${random2}`;
 
-  let correctAnswer = 0;
-  switch (operatorRand) {
-    case '+': correctAnswer = String(rand1 + rand2);
+  let correctAnswer;
+  switch (operatorRandom) {
+    case '+': correctAnswer = String(random1 + random2);
       break;
-    case '-': correctAnswer = String(rand1 - rand2);
+    case '-': correctAnswer = String(random1 - random2);
       break;
-    case '*': correctAnswer = String(rand1 * rand2);
+    case '*': correctAnswer = String(random1 * random2);
       break;
     default:
       break;
@@ -25,4 +25,4 @@ const res = () => {
   return { question, correctAnswer };
 };
 
-export default () => game(description, res);
+export default () => game(description, getData);

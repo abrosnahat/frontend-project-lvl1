@@ -3,22 +3,26 @@ import random from '../random';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const res = () => {
-  const rand1 = random(100);
-
-  const isPrime = (num) => {
-    let x = 0;
-    for (let i = 0; i <= num; i += 1) {
-      if (num % i === 0) x += 1;
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0 && number > 2) {
+      return false;
     }
-    if (x === 2) return 'yes';
-    return 'no';
-  };
-  const correctAnswer = isPrime(rand1);
+  }
+  return true;
+};
 
-  const question = rand1;
+const getData = () => {
+  const random1 = random(0, 100);
+
+  const correctAnswer = isPrime(random1) ? 'yes' : 'no';
+
+  const question = random1;
 
   return { question, correctAnswer };
 };
 
-export default () => game(description, res);
+export default () => game(description, getData);
