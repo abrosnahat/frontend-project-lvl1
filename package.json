@@ -47,6 +47,5 @@
   "dependencies": {
     "@hexlet/pairs": "^1.0.10",
     "readline-sync": "^1.4.10"
-  },
-  "main": "babel.config.js"
+  }
 }
