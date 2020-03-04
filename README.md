@@ -1,6 +1,6 @@
 # Brain Games
 [![Maintainability](https://api.codeclimate.com/v1/badges/24750145a380eb3b470b/maintainability)](https://codeclimate.com/github/abrosnahat/frontend-project-lvl1/maintainability)
-[![Build Status](https://travis-ci.org/abrosnahat/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/abrosnahat/frontend-project-lvl1)
+[![Build Status](https://travis-ci.org/abrosnahat/brainGames.svg?branch=master)](https://travis-ci.org/abrosnahat/brainGames)
 # Description
 
 It is the console games.
